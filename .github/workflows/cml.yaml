@@ -34,7 +34,7 @@ jobs:
           
           MIIC_DIR=miic_R_package
           if [ ! -d $MIIC_DIR ]; then
-            wget -c https://github.com/miicTeam/miic_R_package/archive/v1.4.2.tar.gz -O MIIC_DIR
+            wget -c https://github.com/miicTeam/miic_R_package/archive/v1.4.2.tar.gz -O $MIIC_DIR
             tar -xvzf $MIIC_DIR
             cd $MIIC_DIR
             R CMD INSTALL . --preclean
