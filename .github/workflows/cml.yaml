@@ -14,10 +14,9 @@ jobs:
       - name: Cache R packages
         uses: actions/cache@v1 
         with: 
-          path: ${{ env.R_LIBS_USER }} 
-          key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }} 
-          restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1- 
-           
+          path: /__w/_temp/Library 
+          key: /__w/_temp/Library
+
       - name: Cache
         id: cache
         uses: actions/cache@v2
