@@ -3,19 +3,18 @@ on: [push]
 jobs:
   run:
     runs-on: [ubuntu-latest]
-    container: docker://dvcorg/cml
+    container: docker://davidgortega/cml-test:r
     steps:
       - uses: actions/checkout@v2
-        
-      - uses: r-lib/actions/setup-r@master
-        with:
-          version: '3.6.1'
-        
+
       - name: cml_run
         env:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           # GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
         run: |
+          # dvc pull
+          # Rscript infer_network.R
+
           # Write your CML report
           echo "## Model Metrics" > report.md
           # cat metrics.txt >> report.md
